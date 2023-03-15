@@ -1,10 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - todo',
-    title: 'todo',
+    titleTemplate: '%s - articles',
+    title: 'articles',
     htmlAttrs: {
       lang: 'en'
     },
@@ -21,7 +24,6 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    "@/assets/style.css"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -55,7 +57,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false,
+      dark: true,
       themes: {
         dark: {
           primary: colors.blue.darken2,
