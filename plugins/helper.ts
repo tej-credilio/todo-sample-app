@@ -7,14 +7,14 @@ const helper = {
         return Date.now()
     },
 
-    objectDeepClone: (obj = {}) => {
+    objectDeepClone: (obj: object = {}) => {
         if (typeof obj === "object") {
             return JSON.parse(JSON.stringify(obj))
         }
         return obj
     },
 
-    formatPublishDate: (date) => {
+    formatPublishDate: (date: string) => {
         return moment(date).format("Do MMMM YYYY")
     }
 }

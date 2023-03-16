@@ -43,7 +43,7 @@ import 'reflect-metadata'
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
 // Utils and Interfaces imports
-import { ArticleObj } from '~/utils/interfaces'
+import { Interface_Article } from '~/utils/interfaces'
 
 // Vuex imports
 
@@ -53,7 +53,7 @@ export default class ArticleCard extends Vue {
     $helper: any // To avoid Typescript errors related to type safety 
 
     // Props
-    @Prop() articleData!: ArticleObj
+    @Prop() articleData!: Interface_Article
 
     //Computed Properties
 
