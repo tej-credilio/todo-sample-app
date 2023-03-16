@@ -9,7 +9,7 @@
         </div>
         <div v-else>
             <v-row align="center" class="mx-0">
-                <v-col :cols="4" v-for="article, index in currentArticleList" :key="index">
+                <v-col cols="4" v-for="article, index in currentArticleList" :key="index">
                     <ArticleCard
                         :key="index"
                         :articleData="article"
