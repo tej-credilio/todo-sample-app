@@ -37,7 +37,7 @@ import 'vue-loading-overlay/dist/vue-loading.css'
 import ArticleCard from '~/components/article_card.vue'
 
 // Utils and Interfaces imports
-import { API_KEY, APIS } from '~/utils/globals'
+import { APIS } from '~/utils/globals'
 import { ArticleObj } from '~/utils/interfaces'
 
 @Component({
@@ -68,7 +68,7 @@ export default class Articles extends Vue {
         const { EVERYTHING } = APIS
         const params = {
             sources: "bbc-news",
-            apiKey: API_KEY
+            apiKey: this.$config.NEWS_API_KEY
         }
         try {
             const response = await this.$axios.get(EVERYTHING, {
