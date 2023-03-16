@@ -9,7 +9,7 @@ export const getters = {
 }
 
 export const mutations = {
-    setSelectedArticle(state, { articleData }) {
+    SET_SELECTED_ARTICLES(state, { articleData }) {
         state.selectedArticle = Object.assign({}, articleData)
     }
 }

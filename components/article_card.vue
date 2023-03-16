@@ -46,15 +46,8 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 import { ArticleObj } from '~/utils/interfaces'
 
 // Vuex imports
-import { mapMutations } from 'vuex'
 
-@Component({
-    methods: {
-        ...mapMutations({
-            setSelectedArticle: 'setSelectedArticle'
-        })
-    }
-})
+@Component
 export default class ArticleCard extends Vue {
 
     $helper: any // To avoid Typescript errors related to type safety 
@@ -63,7 +56,6 @@ export default class ArticleCard extends Vue {
     @Prop() articleData!: ArticleObj
 
     //Computed Properties
-    protected setSelectedArticle!: Function // To avoid Typescript errors related to type safety
 
     get formattedPublishDate() {
         return this.$helper.formatPublishDate(this.articleData.publishedAt)
@@ -71,7 +63,7 @@ export default class ArticleCard extends Vue {
 
     //All methods
     setSelectedArticleData() {
-        this.setSelectedArticle({articleData: this.articleData})
+        this.$store.commit('SET_SELECTED_ARTICLES', {articleData: this.articleData})
         this.$router.push("/article_detail")
     }
 

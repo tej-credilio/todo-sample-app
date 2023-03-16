@@ -34,11 +34,6 @@ import { ArticleObj } from '~/utils/interfaces'
 import { mapMutations, mapState } from 'vuex'
 
 @Component({
-    methods: {
-        ...mapMutations({
-            setSelectedArticle: 'setSelectedArticle'
-        })
-    },
     computed: {
         ...mapState([
             'selectedArticle'
