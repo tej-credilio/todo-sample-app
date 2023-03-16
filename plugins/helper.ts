@@ -1,5 +1,3 @@
-import { inject } from "vue"
-
 import moment from "moment"
 
 const helper = {
