@@ -1,5 +1,15 @@
-export interface TodoNote {
-    id: number,
+// Declare all interfaces here.
+
+export interface ArticleInterface {
+    content: string,
+    publishedAt: string,
+    urlToImage: string,
+    url: string,
+    description: string,
     title: string,
-    description: string
+    author: any
+    source: {
+        id: string,
+        name: string
+    }
 }

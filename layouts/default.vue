@@ -103,15 +103,10 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-newspaper-variant-outline',
+          title: 'Articles',
+          to: '/articles'
         },
-        {
-          icon: 'mdi-note-multiple',
-          title: 'Todo List',
-          to: '/todo_list'
-        }
       ],
       miniVariant: false,
       right: true,
