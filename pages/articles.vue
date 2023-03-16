@@ -33,16 +33,12 @@ import { Vue, Component } from 'vue-property-decorator'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
 
-// Components imports
-import ArticleCard from '~/components/article_card.vue'
-
 // Utils and Interfaces imports
 import { APIS } from '~/utils/globals'
 import { ArticleObj } from '~/utils/interfaces'
 
 @Component({
     components: {
-        ArticleCard,
         Loading
     }
 })
