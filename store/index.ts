@@ -15,7 +15,3 @@ export const mutations = {
         state.selectedArticle = Object.assign({}, data.articleData)
     }
 }
-
-export const actions = {
-    // actions
-}

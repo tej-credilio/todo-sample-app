@@ -1,13 +1,11 @@
 <template>
     <div class="pa-5">
-        <div v-if="loading">
-            <Loading :active="loading"
-                :can-cancel="false"
-                :is-full-page="true"
-                color="#007bff"
-            />
-        </div>
-        <div v-else>
+        <Loading :active="loading"
+            :can-cancel="false"
+            :is-full-page="true"
+            color="#007bff"
+        />
+        <div v-if="!loading">
             <v-row align="center" class="mx-0">
                 <v-col cols="4" v-for="article, index in currentArticleList" :key="index">
                     <ArticleCard

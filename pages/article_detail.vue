@@ -8,11 +8,11 @@
         <div class="pa-16">
             <h1 class="page-heading">{{ selectedArticle.title || "--" }}</h1>
             <div class="py-5 text-h6">
-                <div><span class="font-weight-light">Author</span>: {{ selectedArticle.author || "--" }}</div>
-                <div><span class="font-weight-light">Published On</span>: {{ formattedPublishDate || "--" }}</div>
+                <p><span class="font-weight-light">Author</span>: {{ selectedArticle.author || "--" }}</p>
+                <p><span class="font-weight-light">Published On</span>: {{ formattedPublishDate || "--" }}</p>
             </div>
             <div>
-                <div class="text-subtitle-1">Article Detail:</div>
+                <p class="text-subtitle-1">Article Detail:</p>
                 <p class="text-justify text-h6">{{ selectedArticle.content }}</p>
             </div>
             <div>

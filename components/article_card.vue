@@ -18,8 +18,8 @@
             ></v-img>
             <v-card-title @click="setSelectedArticleData" class="card-title">{{ articleData.title }}</v-card-title>
             <v-card-text class="mb-1">
-                <div>Author: {{ articleData.author || "--" }}</div>
-                <div>Published On: {{ formattedPublishDate || "--" }}</div>
+                <p>Author: {{ articleData.author || "--" }}</p>
+                <p>Published On: {{ formattedPublishDate || "--" }}</p>
             </v-card-text>
             <v-spacer></v-spacer>
             <v-divider></v-divider>
