@@ -35,7 +35,7 @@ import 'vue-loading-overlay/dist/vue-loading.css'
 
 // Utils and Interfaces imports
 import { APIS } from '~/utils/globals'
-import { interfaceArticle } from '~/utils/interfaces'
+import { ArticleInterface } from '~/utils/interfaces'
 
 @Component({
     components: {
@@ -47,8 +47,8 @@ export default class Articles extends Vue {
     // Component data
     pageSize: number = 10
     currentPage: number = 1
-    allArticleList: interfaceArticle[] = []
-    currentArticleList: interfaceArticle[] = []
+    allArticleList: ArticleInterface[] = []
+    currentArticleList: ArticleInterface[] = []
     loading: boolean = true
     $helper: any // To avoid Typescript errors related to type safety
 

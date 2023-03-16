@@ -1,6 +1,6 @@
 // Declare all interfaces here.
 
-export interface interfaceArticle {
+export interface ArticleInterface {
     content: string,
     publishedAt: string,
     urlToImage: string,

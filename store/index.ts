@@ -1,4 +1,4 @@
-import { interfaceArticle } from "~/utils/interfaces"
+import { ArticleInterface } from "~/utils/interfaces"
 
 export const state = () => ({
     selectedArticle: {} as Record<string, unknown>
@@ -11,7 +11,7 @@ export const getters = {
 }
 
 export const mutations = {
-    SET_SELECTED_ARTICLES(state : Record<string, unknown>, data: { articleData: interfaceArticle }) {
+    SET_SELECTED_ARTICLES(state : Record<string, unknown>, data: { articleData: ArticleInterface }) {
         state.selectedArticle = Object.assign({}, data.articleData)
     }
 }

@@ -28,7 +28,7 @@ import 'reflect-metadata'
 import { Vue, Component } from 'vue-property-decorator'
 
 // Utils and Interfaces imports
-import { interfaceArticle } from '~/utils/interfaces'
+import { ArticleInterface } from '~/utils/interfaces'
 
 // Vuex imports
 import { mapMutations, mapState } from 'vuex'
@@ -51,7 +51,7 @@ export default class ArticleDetail extends Vue {
 
 
     //Computed Properties
-    protected selectedArticle!: interfaceArticle // To avoid Typescript errors related to type safety
+    protected selectedArticle!: ArticleInterface // To avoid Typescript errors related to type safety
 
     get formattedPublishDate() {
         return this.selectedArticle ? this.$helper.formatPublishDate(this.selectedArticle.publishedAt) : ""
