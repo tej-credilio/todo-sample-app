@@ -1,27 +1,27 @@
 <template>
     <div class="pa-5">
         <div v-if="loading">
-            <div v-for="item in 3" :key="item" class="mb-10"> <!-- show some random loading content while the data is loading -->
-                <content-placeholders>
-                    <content-placeholders-heading :img="true" />
-                    <content-placeholders-text :lines="3" />
-                </content-placeholders>
-            </div>
+            <Loading :active="loading"
+                :can-cancel="false"
+                :is-full-page="true"
+                color="#007bff"
+            />
         </div>
         <div v-else>
-            <ArticleCard
-                v-for="article, index in currentArticleList"
-                :key="index"
-                :articleData="article"
-            />
+            <v-row align="center" class="mx-0">
+                <v-col :cols="4" v-for="article, index in currentArticleList" :key="index">
+                    <ArticleCard
+                        :key="index"
+                        :articleData="article"
+                    />
+                </v-col>
+            </v-row>
 
             <v-pagination
                 circle
                 v-model="currentPage"
                 :length="totalPages"
                 @input="onPageNumberClick"
-                @next="onNextClick"
-                @previous="onPrevClick"
             ></v-pagination>
         </div>
     </div>
@@ -30,8 +30,8 @@
 <script lang="ts">
 // Library imports
 import { Vue, Component } from 'vue-property-decorator'
-import VueContentPlaceholders from 'vue-content-placeholders'
-Vue.use(VueContentPlaceholders)
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
 // Components imports
 import ArticleCard from '~/components/article_card.vue'
@@ -42,7 +42,8 @@ import { ArticleObj } from '~/utils/interfaces'
 
 @Component({
     components: {
-        ArticleCard
+        ArticleCard,
+        Loading
     }
 })
 export default class Articles extends Vue {
@@ -53,7 +54,7 @@ export default class Articles extends Vue {
     allArticleList: ArticleObj[] = []
     currentArticleList: ArticleObj[] = []
     loading: boolean = true
-    $helper: any
+    $helper: any // To avoid Typescript errors related to type safety
 
 
     // Computed Properties
@@ -92,16 +93,9 @@ export default class Articles extends Vue {
 
     onPageNumberClick(number: number) {
         this.currentPage = number
-        const startIndex = this.currentPage - 1
-        const lastIndex = this.pageSize + this.currentPage
+        const startIndex = (this.currentPage - 1) * this.pageSize
+        const lastIndex = this.pageSize + startIndex
         this.currentArticleList = this.$helper.objectDeepClone(this.allArticleList.slice(startIndex, lastIndex))
-    }
-
-    onNextClick() {
-        // console.log("number:")
-    }
-
-    onPrevClick() {
     }
 
     // Mounted hook to load the data when component finished initial render.
